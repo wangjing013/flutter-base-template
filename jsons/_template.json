@@ -1,0 +1,19 @@
+{
+  "@meta": { // @meta 可以定制单个 json 的生成规则，默认使用全局配置
+    "import": [
+      "test_dir/profile.dart" // 导入其它文件
+    ],
+    "comments": {
+      "name": "名字" // 给 "name" 字段添加注释
+    },
+    "nullable": false, // 字段默认非可空，会生成 late
+    "ignore": false // 是否跳过当前 JSON 的 model 类生成
+  },
+  "@JsonKey(ignore: true) Profile?": "profile",
+  "@JsonKey(name: '+1') int?": "loved",
+  "name": "wendux",
+  "father": "$user",
+  "friends": "$[]user",
+  "keywords": "$[]String",
+  "age?": 20 // 指定 age 字段可空
+}
